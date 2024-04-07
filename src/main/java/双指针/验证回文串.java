@@ -33,5 +33,33 @@ package 双指针;
  * */
 public class 验证回文串 {
 
+    /**
+     * 双指针
+     * */
+    public boolean checkHuiwen(String var){
+        char[] chars = var.toCharArray();
+        StringBuffer sb = new StringBuffer();
+        //1.转换小写，去除空格
+        for(int i=0; i< chars.length; i++){
+            char c = chars[i];
+            if(Character.isLetterOrDigit(c)){
+                sb.append(Character.toLowerCase(c));
+            }
+        }
+        //2.
+        if(sb.length() > 0){
+            char[] charsNew = sb.toString().toCharArray();
+            int p1 = 0, p2 = charsNew.length-1;
+            while(p1 < p2){
+                if(charsNew[p1] != charsNew[p2]){
+                    return false;
+                }
+                p1++;
+                p2--;
+            }
+        }
+
+        return true;
+    }
 
 }
