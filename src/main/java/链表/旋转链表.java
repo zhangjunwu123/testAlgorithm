@@ -11,9 +11,6 @@ package 链表;
 public class 旋转链表 {
 
 
-    public ListNode inverseListNode(ListNode root, int k){
-
-    }
 
     static void inverse(ListNode root){
         ListNode prev = root;

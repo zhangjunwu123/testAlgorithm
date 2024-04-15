@@ -47,7 +47,7 @@ public class 无重复字符的最长子串 {
             if(left != 0){//第一次直接放入set，后面每进行一次迭代都吧上一个元素删除，即左索引右移
                 set.remove(s.charAt(left-1));
             }
-            //对于元素i，它右边的元素只要不重复就一直放入窗口
+            //对于元素i，它右边的元素只要不重复就一直放入窗口,这里结束就代表有着一次满足的结果
             while(right+1 < n && !set.contains(s.charAt(right+1))){
                 set.add(s.charAt(right+1));
                 right++;
